@@ -16,15 +16,8 @@
       <div class="data">
         <script id="tableTemplate" type="text/x-handlebars-template">
 
-          {{#each shoes}}
-          <!-- <tr> -->
-          <!-- <td>{{color}}</td> -->
-          <!-- <td>{{size}}</td> -->
-          <!-- <td>R{{price}}.</td> -->
-          <!-- <td>{{brand}}</td> -->
-          <!-- <td>{{instock}}</td> -->
+      {{#each shoes}}
 
-          <!-- </tr> -->
           <table>
   <tr>
     <th>color</th>
@@ -49,32 +42,8 @@
       </div>
 
 
-      <script id="dropTemp" type="text/x-handlebars-template">
-        <select id="colorDrpDwn">
-          <option selected="false" disabled="disabled">select color</option>
-            {{#each colors}}
-              <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
 
-          <select id="sizeDrpDwn">
-            <option selected="true" disabled="disabled">select size</option>
-            {{#each sizes}}
-            <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
-
-          <select id="brandDrpDwn">
-            <option selected="true" disabled="disabled">select brand</option>
-            {{#each brands}}
-            <option value="{{this}}" >{{this}}</option>
-            {{/each}}
-          </select>
-
-
-      </script>
-
-      <button type="button" name="searchButton" id="search">All Shoes</button>
+      <!-- <button type="button" name="searchButton" id="search">All Shoes</button> -->
       <div id="Output">
 
       </div>
@@ -90,27 +59,18 @@
       <br>
       brand: <input type="text" id="new_brand"><br><br>
       <br>
-      instock: <input type="number" id="new_stock"><br><br>
+      instock: <input type="number" id="in_stock"><br><br>
       price: <input type="text" id="new_price"><br><br>
 
       <input type="button" id="addBtn" value="Add Stock">
+<br>
+<br>
+Size Filter:<input type="text" id="sizeFilter" name="name" value="">
+<input type="submit" id="sizeButton"name="name" value="">
+Brand filter:<input type="text" id="brandFilter" name="name" value="">
+<input type="submit" id="brandButton" name="name" value= ''>
 
 
-      <table>
-          <thead>
-              <tr>
-                  <th>color</th>
-                  <th>size</th>
-                  <th>brand</th>
-                  <th>price</th>
-                  <th>in_stock</th>
-
-              </tr>
-          </thead>
-          <tbody id="tableDisplay">
-
-          </tbody>
-      </table>
       <script src="api.js" charset="utf-8"></script>
   </body>
   </html>
