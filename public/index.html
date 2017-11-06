@@ -4,11 +4,113 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" media="screen" title="no title" charset="utf-8">
-    <title>API</title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
   </head>
+
   <body>
-    <h1><center>Shoe Catalogue</center></h1>
+      <center><h1>Shoe Catalogue</h1></center>
+      <br>
+      <br>
+      <br>
+      <div class="data">
+        <script id="tableTemplate" type="text/x-handlebars-template">
+
+          {{#each shoes}}
+          <!-- <tr> -->
+          <!-- <td>{{color}}</td> -->
+          <!-- <td>{{size}}</td> -->
+          <!-- <td>R{{price}}.</td> -->
+          <!-- <td>{{brand}}</td> -->
+          <!-- <td>{{instock}}</td> -->
+
+          <!-- </tr> -->
+          <table>
+  <tr>
+    <th>color</th>
+    <th>brand</th>
+    <th>size</th>
+    <th>price</th>
+    <th>in_stock</th>
+  </tr>
+  <tr>
+    <td>{{color}}</td>
+    <td>{{brand}}</td>
+    <td>{{size}}</td>
+    <td>R{{price}}</td>
+    <td>{{in_stock}}</td>
+  </tr>
+
+</table>
+
+          {{/each}}
+        </script>
+
+      </div>
+
+
+      <script id="dropTemp" type="text/x-handlebars-template">
+        <select id="colorDrpDwn">
+          <option selected="false" disabled="disabled">select color</option>
+            {{#each colors}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+
+          <select id="sizeDrpDwn">
+            <option selected="true" disabled="disabled">select size</option>
+            {{#each sizes}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+
+          <select id="brandDrpDwn">
+            <option selected="true" disabled="disabled">select brand</option>
+            {{#each brands}}
+            <option value="{{this}}" >{{this}}</option>
+            {{/each}}
+          </select>
+
+
+      </script>
+
+      <button type="button" name="searchButton" id="search">All Shoes</button>
+      <div id="Output">
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <h2>Add new Stock</h2>
+      <br>
+      <br>
+      color:</center> <input type="text" id="new_color"> <br><br>
+      size: <input type="number" id="new_size">
+      <br>
+      <br>
+      brand: <input type="text" id="new_brand"><br><br>
+      <br>
+      instock: <input type="number" id="new_stock"><br><br>
+      price: <input type="text" id="new_price"><br><br>
+
+      <input type="button" id="addBtn" value="Add Stock">
+
+
+      <table>
+          <thead>
+              <tr>
+                  <th>color</th>
+                  <th>size</th>
+                  <th>brand</th>
+                  <th>price</th>
+                  <th>in_stock</th>
+
+              </tr>
+          </thead>
+          <tbody id="tableDisplay">
+
+          </tbody>
+      </table>
+      <script src="api.js" charset="utf-8"></script>
   </body>
-</html>
+  </html>

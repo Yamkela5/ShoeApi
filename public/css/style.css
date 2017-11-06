@@ -4,3 +4,15 @@ body{
   background-size: cover;
    font-family: 'Barrio';font-size: 22px;
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
+}
