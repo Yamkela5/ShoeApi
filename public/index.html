@@ -16,9 +16,7 @@
       <div class="data">
         <script id="tableTemplate" type="text/x-handlebars-template">
 
-      {{#each shoes}}
-
-          <table>
+<table>
   <tr>
     <th>color</th>
     <th>brand</th>
@@ -26,17 +24,20 @@
     <th>price</th>
     <th>in_stock</th>
   </tr>
-  <tr>
+  {{#each shoes}}
+      <tr>
     <td>{{color}}</td>
-    <td>{{brand}}</td>
     <td>{{size}}</td>
-    <td>R{{price}}</td>
+    <td>{{brand}}</td>
+    <td>R{{price}}.</td>
     <td>{{in_stock}}</td>
-  </tr>
+
+</tr>
+
+{{/each}}
 
 </table>
 
-          {{/each}}
         </script>
 
       </div>
@@ -66,9 +67,9 @@
 <br>
 <br>
 Size Filter:<input type="text" id="sizeFilter" name="name" value="">
-<input type="submit" id="sizeButton"name="name" value="">
+<input type="submit" id="sizeButton"name="name" value="Search">
 Brand filter:<input type="text" id="brandFilter" name="name" value="">
-<input type="submit" id="brandButton" name="name" value= ''>
+<input type="submit" id="brandButton" name="name" value= 'Search'>
 
 
       <script src="api.js" charset="utf-8"></script>

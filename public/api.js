@@ -52,8 +52,8 @@ success:function(shoesData){
   data.innerHTML = tableTemplateInst({shoes:shoesData})
 
 }
-
 })
+window.location.reload()
 
     })
     sizeButton.addEventListener('click', function() {

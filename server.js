@@ -41,9 +41,10 @@ app.get('/api/shoes', function(req, res) {
 
 // A route that will display routes with different brands
 app.get('/api/shoes/brand/:brandname', function(req, res) {
-    var Brand = req.params.brandname;
+    var brand = req.params.brandname;
+    console.log(brand);
     models.Model.find({
-        brand: Brand
+        brand: brand
     }, function(err, results) {
         if (err) {
             console.log(err);
@@ -67,18 +68,18 @@ app.get('/api/shoes/size/:size', function(req, res) {
         }
     })
 })
-app.get('/api/shoes/color/:color', function(req, res) {
-    var Size = req.params.color;
-    models.Model.find({
-        size: Size
-    }, function(err, results) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(results)
-        }
-    })
-})
+// app.get('/api/shoes/color/:color', function(req, res) {
+//     var Size = req.params.color;
+//     models.Model.find({
+//         size: Size
+//     }, function(err, results) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.json(results)
+//         }
+//     })
+// })
 // A route that will filter shoes with size and brand
 app.get('/api/shoes/brand/:brandname/size/:size', function(req, res) {
     var Brand = req.params.brandname;
