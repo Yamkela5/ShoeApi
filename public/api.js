@@ -1,5 +1,5 @@
  $("document").ready(function() {
-   console.log('success');
+   //console.log('success');
    var Output = document.querySelector('#Output');
    var data = document.querySelector('.data')
    var tableTemplate = document.querySelector("#tableTemplate").innerHTML;
@@ -9,17 +9,33 @@
    var sizeButton = document.querySelector('#sizeButton')
    var brandButton = document.querySelector('#brandButton')
 
-$.ajax({
-type: 'GET',
-url: '/api/shoes',
-datatype: 'json',
-success:function(shoesData){
-  console.log(shoesData);
-  data.innerHTML = tableTemplateInst({shoes:shoesData})
+function showAllShoes() {
 
+  $.ajax({
+    type: 'GET',
+    url: '/api/shoes',
+    datatype: 'json',
+    success:function(shoesData){
+      console.log(shoesData);
+      data.innerHTML = tableTemplateInst({shoes:shoesData})
+    }
+  })
 }
 
-})
+showAllShoes();
+
+
+allFilter.addEventListener('click', function(){
+  $.ajax({
+    type: 'GET',
+    url: '/api/shoes',
+    datatype: 'json',
+    success:function(shoesData){
+      console.log(shoesData);
+      data.innerHTML = tableTemplateInst({shoes:shoesData})
+    }
+  })
+});
     var new_color = document.getElementById("new_color");
     var new_size = document.getElementById("new_size");
     var new_brand = document.getElementById("new_brand");
@@ -43,17 +59,18 @@ var newData ={
 
 }
 $.ajax({
-type: 'POST',
-url: '/api/shoes',
-datatype: 'json',
-data: newData,
-success:function(shoesData){
-  console.log(shoesData);
-  data.innerHTML = tableTemplateInst({shoes:shoesData})
-
-}
+  type: 'POST',
+  url: '/api/shoes',
+  datatype: 'json',
+  data: newData,
+  success:function(shoesData){
+      //console.log(shoesData);
+      //data.innerHTML = tableTemplateInst({shoes:shoesData})
+      showAllShoes();
+    }
 })
-window.location.reload()
+
+//window.location.reload()
 
     })
     sizeButton.addEventListener('click', function() {

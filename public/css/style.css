@@ -7,12 +7,55 @@ body{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    align: center;
 }
 th, td {
     padding: 5px;
     text-align: left;
 }
-table#t01 {
+#sizeButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#brandButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    height:50px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#allFilter {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    height:50px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=text]{
+
+  height:45px
+}
+/*table#t01 {
     width: 100%;
     background-color: #f1f1c1;
-}
+}*/
