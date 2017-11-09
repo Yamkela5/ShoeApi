@@ -15,13 +15,17 @@
       <br>
       Size Filter:<input type="text" id="sizeFilter" name="name" value="">
       <input type="submit" id="sizeButton"name="name" value="Search">
-      Brand filter:<input type="text" id="brandFilter" name="name" value="">
+      Brand filter:<input type="text" id="brandFilter" name="name" value="" placeholder="A new value">
       <input type="submit" id="brandButton" name="name" value= 'Search'>
       All Shoes: <button type="button" name="searchButton" id="allFilter">Search</button>
       <br>
       <br>
       <div class="data">
+        <br>
+        <br>
         <script id="tableTemplate" type="text/x-handlebars-template">
+<br>
+<br>
 
 <table>
   <tr>
@@ -60,14 +64,14 @@
       <h2>Add new Stock</h2>
       <br>
       <br>
-      color:</center> <input type="text" id="new_color"> <br><br>
-      size: <input type="number" id="new_size">
+      <input type="text" id="new_color" placeholder="New color"> <br><br>
+      <input type="number" id="new_size" placeholder="New size">
       <br>
       <br>
-      brand: <input type="text" id="new_brand"><br><br>
+      <input type="text" id="new_brand" placeholder="New brand"><br><br>
       <br>
-      instock: <input type="number" id="in_stock"><br><br>
-      price: <input type="text" id="new_price"><br><br>
+      <input type="number" id="in_stock" placeholder="New stock"><br><br>
+      <input type="text" id="new_price" placeholder="New price"><br><br>
 
       <input type="button" id="addBtn" value="Add Stock">
 <br>

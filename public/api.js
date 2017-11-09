@@ -50,6 +50,10 @@ allFilter.addEventListener('click', function(){
             var brand= new_brand.value;
             var price = new_price.value
 
+if(size.length == 0 || stock.length == 0 || color.length == 0 || brand.length == 0 || price.length == 0 ){
+  alert('Please fill in all the fields')
+}
+else{
 var newData ={
   size:size,
   brand:brand,
@@ -68,8 +72,9 @@ $.ajax({
       //data.innerHTML = tableTemplateInst({shoes:shoesData})
       showAllShoes();
     }
-})
 
+})
+}
 //window.location.reload()
 
     })
