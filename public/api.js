@@ -43,12 +43,16 @@ allFilter.addEventListener('click', function(){
     var in_stock = document.getElementById("in_stock");
   addBtn.addEventListener('click', function() {
 
-
             var size = new_size.value;
             var stock = in_stock.value;
           var color=  new_color.value;
             var brand= new_brand.value;
             var price = new_price.value
+            new_color.value = '';
+            new_brand.value ='' ;
+            new_size.value ='' ;
+            new_price.value ='' ;
+            in_stock.value ='' ;
 
 if(size.length == 0 || stock.length == 0 || color.length == 0 || brand.length == 0 || price.length == 0 ){
   alert('Please fill in all the fields')
@@ -62,6 +66,9 @@ var newData ={
   in_stock: stock
 
 }
+//addBtn.addEventListener('click', function() {
+
+// })
 $.ajax({
   type: 'POST',
   url: '/api/shoes',
